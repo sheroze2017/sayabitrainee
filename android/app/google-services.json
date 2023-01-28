@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "236296742499",
+    "project_id": "sayabi-trainee",
+    "storage_bucket": "sayabi-trainee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:236296742499:android:dadb593b8146f18c9bfa56",
+        "android_client_info": {
+          "package_name": "com.example.sayabidev_group_assign_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "236296742499-dsm8p1kf1fr88dorf1gpvv4ps4n4t581.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc46RGE7xeP8XdCSrb6_3ku9ZtVYriOdg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "236296742499-dsm8p1kf1fr88dorf1gpvv4ps4n4t581.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
