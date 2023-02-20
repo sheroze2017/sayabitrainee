@@ -9,17 +9,18 @@ import 'package:sayabidev_group_assign_1/view/register_screen.dart';
 import '../utils/utils.dart';
 
 class loginScreen extends StatelessWidget {
-  const loginScreen({super.key});
+  loginScreen({super.key});
+  final TextEditingController emailcontroller = TextEditingController();
+  final TextEditingController passwordcontroller = TextEditingController();
 
+  FocusNode emailFocusNode = FocusNode();
+  FocusNode passwordFocusNode = FocusNode();
+  FocusNode submitNode = FocusNode();
   @override
   Widget build(BuildContext context) {
-    final TextEditingController emailcontroller = new TextEditingController();
-    final TextEditingController passwordcontroller =
-        new TextEditingController();
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    FocusNode emailFocusNode = FocusNode();
-    FocusNode passwordFocusNode = FocusNode();
+
     return Scaffold(
       body: SingleChildScrollView(
         child: SafeArea(
@@ -56,13 +57,12 @@ class loginScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8.0),
                   child: TextFormField(
-                    keyboardType: TextInputType.emailAddress,
                     controller: emailcontroller,
-                    focusNode: emailFocusNode,
-                    onFieldSubmitted: (val) {
-                      Utils.FieldFocusChange(
-                          context, emailFocusNode, passwordFocusNode);
-                    },
+                    //focusNode: emailFocusNode,
+                    // onFieldSubmitted: (val) {
+                    //   Utils.FieldFocusChange(
+                    //       context, emailFocusNode, passwordFocusNode);
+                    // },
                     decoration: InputDecoration(
                         border: InputBorder.none, hintText: 'Email'),
                   ),
@@ -82,8 +82,13 @@ class loginScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: TextFormField(
-                    focusNode: passwordFocusNode,
-                    obscureText: true,
+                    //focusNode: emailFocusNode,
+                    // onFieldSubmitted: (val) {
+                    //   Utils.FieldFocusChange(
+                    //       context, passwordFocusNode, submitNode);
+                    // },
+                    //   focusNode: passwordFocusNode,
+                    //obscureText: true,
                     controller: passwordcontroller,
                     decoration: InputDecoration(
                         border: InputBorder.none, hintText: 'Password'),
@@ -96,6 +101,7 @@ class loginScreen extends StatelessWidget {
               padding:
                   const EdgeInsets.only(left: 8.0, right: 8, top: 6, bottom: 6),
               child: InkWell(
+                //   focusNode: submitNode,
                 onTap: (() async {
                   Login(emailcontroller.text.toString(),
                       passwordcontroller.text.toString());

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:sayabidev_group_assign_1/Api/weatherApi.dart';
+import 'package:sayabidev_group_assign_1/view/home_screen.dart';
 import 'package:sayabidev_group_assign_1/view/login_screen.dart';
 import 'package:sayabidev_group_assign_1/view/register_screen.dart';
 import 'package:sayabidev_group_assign_1/view/splash.dart';
@@ -7,8 +9,12 @@ import 'package:firebase_core/firebase_core.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp();
+
   runApp(MyApp());
+  // fetchAlbum('Karachi');
+  // //fetchAlbum();
 }
 
 class MyApp extends StatelessWidget {
@@ -32,6 +38,6 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-        home: registerScreen());
+        home: loginScreen());
   }
 }

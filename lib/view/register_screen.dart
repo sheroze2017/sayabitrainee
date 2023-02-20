@@ -16,19 +16,17 @@ class registerScreen extends StatelessWidget {
   registerScreen({super.key});
   final GlobalKey<FlutterPwValidatorState> validatorKey =
       GlobalKey<FlutterPwValidatorState>();
+  final TextEditingController usercontroller = TextEditingController();
 
+  final TextEditingController emailcontroller = TextEditingController();
+  final TextEditingController passwordcontroller = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    final TextEditingController usercontroller = new TextEditingController();
-
-    final TextEditingController emailcontroller = new TextEditingController();
-    final TextEditingController passwordcontroller =
-        new TextEditingController();
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    FocusNode emailFocusNode = FocusNode();
-    FocusNode passwordFocusNode = FocusNode();
-    FocusNode userFocusNode = FocusNode();
+    // FocusNode emailFocusNode = FocusNode();
+    // FocusNode passwordFocusNode = FocusNode();
+    // FocusNode userFocusNode = FocusNode();
     Map doc;
     bool check = false;
     return Scaffold(
@@ -58,12 +56,12 @@ class registerScreen extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 8.0),
                       child: TextFormField(
-                        focusNode: emailFocusNode,
-                        onFieldSubmitted: (val) {
-                          Utils.FieldFocusChange(
-                              context, emailFocusNode, userFocusNode);
-                        },
-                        keyboardType: TextInputType.emailAddress,
+                        // focusNode: emailFocusNode,
+                        // onFieldSubmitted: (val) {
+                        //   Utils.FieldFocusChange(
+                        //       context, emailFocusNode, userFocusNode);
+                        // },
+                        //  keyboardType: TextInputType.emailAddress,
                         controller: emailcontroller,
                         decoration: InputDecoration(
                             border: InputBorder.none, hintText: 'Email'),
@@ -82,11 +80,11 @@ class registerScreen extends StatelessWidget {
                     child: Padding(
                       padding: const EdgeInsets.only(left: 8),
                       child: TextFormField(
-                        focusNode: userFocusNode,
-                        onFieldSubmitted: (val) {
-                          Utils.FieldFocusChange(
-                              context, userFocusNode, passwordFocusNode);
-                        },
+                        //     focusNode: userFocusNode,
+                        // onFieldSubmitted: (val) {
+                        //   Utils.FieldFocusChange(
+                        //       context, userFocusNode, passwordFocusNode);
+                        // },
                         controller: usercontroller,
                         decoration: InputDecoration(
                             border: InputBorder.none, hintText: 'Username'),
@@ -106,9 +104,9 @@ class registerScreen extends StatelessWidget {
                       padding: const EdgeInsets.only(left: 8),
                       child: TextFormField(
                         // onTap: () => FutureBuilder(builder: ),
-                        obscureText: true,
+                        //obscureText: true,
                         controller: passwordcontroller,
-                        focusNode: passwordFocusNode,
+                        //  focusNode: passwordFocusNode,
                         decoration: InputDecoration(
                             border: InputBorder.none, hintText: 'Password'),
                       ),
